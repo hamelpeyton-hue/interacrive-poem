@@ -1,40 +1,74 @@
-/* styles.css */
-html{
-	width: 100%;
-	height: 100%;
+html,
+body{
+
+    margin:0;
+    width:100%;
+    height:100%;
+
 }
 
 body{
-	margin: 1rem;
-	background-color: black;
-	color: whitesmoke;
-	font-size: 5rem;
-	overflow: hidden;
-	background-image: url("../img/marble.mp4");
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
+
+    overflow:hidden;
+
+    background-image:url("../img/marble.gif");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    font-family:"Josefin Sans",sans-serif;
+
 }
 
-.grid-container {
-	display: grid;
-	/*grid-template-columns: 1fr 1fr 1fr;*/
-	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-	gap: 2rem;
-	margin: 10% 4rem 0 4rem;
+.grid-container{
+
+    position:relative;
+
+    width:100vw;
+    height:100vh;
+
 }
 
-.last {
-	padding-bottom: 2rem;
-	border-bottom: 2px solid rgb(220, 200,180);
+.word{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    color:white;
+
+    font-size:3rem;
+
+    opacity:0;
+
+    transform:translate(-50%,-50%);
+
+    transition:
+        opacity .5s,
+        transform 2s ease;
+
 }
 
-@keyframes fadeout {
-	0% { opacity: 1;}
-	100% { opacity: 0;}
-}
+@keyframes drift{
 
-body {
-	animation-name: fadeout;
-	animation-duration: 2s;
+    0%{
+        transform:
+        translate(var(--x),var(--y))
+        rotate(var(--r));
+    }
+
+    50%{
+        transform:
+        translate(calc(var(--x) + 15px),
+                  calc(var(--y) - 20px))
+        rotate(calc(var(--r) + 8deg));
+    }
+
+    100%{
+        transform:
+        translate(var(--x),var(--y))
+        rotate(var(--r));
+    }
+
 }
