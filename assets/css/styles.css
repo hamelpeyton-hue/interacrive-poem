@@ -10,7 +10,7 @@ body{
 	color: whitesmoke;
 	font-size: 5rem;
 	overflow: hidden;
-	background-image: url("../img/flames.gif");
+	background-image: url("../img/marble.mp4");
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -32,4 +32,9 @@ body{
 @keyframes fadeout {
 	0% { opacity: 1;}
 	100% { opacity: 0;}
+}
+
+body {
+	animation-name: fadeout;
+	animation-duration: 2s;
 }
